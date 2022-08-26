@@ -1,0 +1,84 @@
+@import '../../../global-sass/core';
+
+.fix-desk-requests *{
+    box-sizing: border-box;
+}
+
+.fix-desk-requests{
+    margin: 0;
+    padding: 1rem;
+    min-height: 100vh;
+
+    &_ul{
+        list-style: none;
+        padding: 0;
+        width: 60%;
+        margin: 0 auto;
+
+        @media screen and (max-width: 1000px) {
+            width: 90%;
+        }
+
+        @media screen and (max-width: 550px) {
+            width: 100%;
+        }
+
+        & li{
+           background-color: $color-box-medium;
+           padding: 1rem;
+           margin-bottom: 2rem;
+           @include flex-variable(row, wrap, space-between, center, center);
+           border-radius: 10px;
+        }
+    }
+    
+    & .flex-placeholder{
+        min-width: 2rem;
+    }
+
+    & button{
+        all: initial;
+        padding : 0.7rem;
+        @include box-shadow-default();
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover{
+            @include box-shadow-default-hover();
+        }
+
+        &:first-of-type{
+            background-color: $color-button-green;
+            margin-right: 1rem;
+        }
+
+        &:nth-of-type(2){
+            background-color: tomato;
+        }
+    }
+}
+
+.request{
+
+    &_room-desk{
+        background-color: #fff;
+        position: relative;
+        left: -1rem;
+        padding: 0.5rem;
+        padding-right: 2rem;
+        border-radius: 0 10px 10px 0;
+        font-size: 110%;
+        text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    }
+
+    &_text{
+        width: 100%;
+        // text-align: center;
+        // border: 1px solid black;
+        margin-bottom: 2rem;
+        box-shadow: 2px 2px rgba(0,0,0,0.2) inset;
+        padding: 0.5rem;
+        border-radius: 10px;
+        background-color: $color-box-light;
+    }
+}

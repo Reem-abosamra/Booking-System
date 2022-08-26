@@ -1,0 +1,98 @@
+@import "../../../global-sass/core";
+
+.admin-landing-page{
+    @include flex-variable(row, wrap, space-between, center, center);
+    margin: 0 auto;
+    height: 90vh;
+    width: 50%;
+    transition: all 0.5s;
+    @media screen and (max-width: 1400px) {
+        width: 80%;
+    }
+    @media screen and (max-width: 850px) {
+        @include flex-variable(column, wrap, center, center, center);
+    }
+    & .adminLink{   
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        place-items: center;
+        width:150px;
+        height:fit-content;
+        background-color: white;
+        padding: 20px;
+        margin:10px 15px;
+        border-radius:10px ;
+        cursor: pointer;
+        transition: all 0.2s;
+        @media screen and (max-width: 850px) {
+           height: 6rem;
+        }
+
+        &:hover{
+            background-color: rgb(194, 233, 255);
+            font-size: 17px;
+        }
+        &:active
+        {
+            transform:scale(0.9)
+        }
+        & p{
+            position: relative;
+        }
+        & .number{
+            position: absolute;
+            width: 30px;
+            height: 20px;
+            margin: 5px 0;
+
+        }
+        & div{
+            position: absolute;
+            bottom: 60px;
+            left: 15px;
+
+        }
+
+    }
+    
+}
+
+
+@media (max-width: 350px) {
+    .admin-landing-page{
+
+        & .adminLink{   
+
+            & .number{
+                
+               margin-bottom: 20px;
+         
+            }
+ 
+    
+        }
+        
+    }
+    
+}
+
+
+@media (max-width: 250px) {
+    .admin-landing-page{
+
+        & .adminLink{   
+
+            & .number{
+                
+               margin-bottom: 30px;
+         
+            }
+ 
+    
+        }
+        
+    }
+    
+}

@@ -1,0 +1,126 @@
+@import "../../../global-sass/core";
+
+.UserReservations-section {
+    @include flex-variable(column, wrap, space-between, center, center);
+    width: 100%;
+    & .UserReservations-section-new {
+        @include flex-variable(column, wrap, space-between, center, center);
+         width: 100%;
+        & .reservationsItem {
+            @include flex-variable(row, wrap, space-between, center, center);
+            width: 50vw;
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(208, 253, 255, 0.413);
+            border-radius: 5px;
+
+            & button {
+                width: 80px;
+                border: none;
+                padding: 5px;
+                border-radius: 3px;
+                color: white;
+                background-color: red;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                &:hover {
+                    background-color: rgb(255, 149, 0);
+                }
+                &:active
+                {
+                   transform:scale(0.9)
+                }
+            }
+        }
+    }
+
+    & .UserReservations-section-old {
+        @include flex-variable(column, wrap, space-between, center, center);
+        transition: all 0.2s ease-in-out;
+        & .reservationsItem {
+            @include flex-variable(row, wrap, space-between, center, center);
+            width: 50vw;
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(208, 253, 255, 0.413);
+            border-radius: 5px;
+
+            & .reservationsDetail {
+                @include flex-variable(row, wrap, space-between, center, center);
+                width: 100%;
+                transition: all 0.2s ease-in-out;
+                & img {
+                    width: 20px;
+                    height: 20px;
+                    transition: all .2s ease-in-out;
+                    &:active
+                    {
+                       transform:scale(0.4);
+                       transition: all .2s ease-in-out;
+                    }
+                }
+
+                & button {
+                    width: 80px;
+                    border: none;
+                    padding: 5px;
+                    border-radius: 3px;
+                    color: white;
+                    background-color: black;
+                    cursor: pointer;
+                    transition: all 0.2s ease-in-out;
+                    &:hover {
+                        background-color: rgb(0, 77, 125);
+                    }
+                    &:active
+                    {
+                       transform:scale(0.9)
+                    }
+                }
+            }
+
+            & .reservationCommentContainer {
+                @include flex-variable(row, wrap, space-between, center, center);
+                margin: 10px 0;
+                width: 100%;
+
+                & textarea {
+                    width: 100%;
+                    border: none;
+                    padding: 5px;
+                    border-radius: 3px;
+                }
+
+
+                & button {
+                    width: 80px;
+                    border: none;
+                    padding: 5px;
+                    margin-top: 10px;
+                    border-radius: 3px;
+                    color: white;
+                    background-color: black;
+                }
+
+            }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+.UserReservations-section {
+        & .UserReservations-section-new {
+            & .reservationsItem {
+                width: 90vw;
+            }
+        }
+    
+        & .UserReservations-section-old {
+            & .reservationsItem {
+                width: 90vw;
+            }
+        }
+    
+    }
+}

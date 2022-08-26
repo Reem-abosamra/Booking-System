@@ -1,0 +1,89 @@
+@import "../../../global-sass/core";
+
+
+.start-section {
+     min-height: 100vh;
+     background: linear-gradient(180deg, #63BDFF 0%, rgba(131, 234, 241, 0.7) 100%);
+     box-shadow: 0px 2px 18px -1px rgba(0, 0, 0, 0.83);
+     transition: all 0.5s;
+     @include flex-variable(row, nowrap, center, center, center);
+     padding: 2rem;
+     @media screen and (max-width: 1150px) {
+          @include flex-variable(column, nowrap, center, center, center);
+     }
+
+     & h1{
+          font-size: 220%;
+          text-align: center;
+     }
+
+     & .h1-block{
+          display: block;
+          margin-bottom: 0.3rem;
+     }
+
+     & .start-left-col {
+          text-align: center;
+          & img{
+               width: 17rem;
+          }
+          margin-bottom: 5rem;
+     }
+
+     & .start-right-col {
+          background-color: rgba(224, 253, 253, 0.377);
+          backdrop-filter: blur(20px);
+          border-radius: 15px;
+          min-height: 75vh;
+          width: 25rem;
+          margin-left: 10vw;
+          @include flex-variable(column, nowrap, flex-start, center, center);
+          box-shadow: 0px 2px 7px -4px rgba(44, 44, 44, 0.73);
+          padding: 2rem;
+          transition: all 0.5s;
+          
+          @media screen and (max-width: 1150px) {
+               margin-left: 0;
+          }
+          @media screen and (max-width: 600px) {
+               width: 90%;    
+          }
+
+          & .Login-signUp-container {
+               width: 100%;
+               border-radius: 20px;
+               @include flex-variable(column, wrap, space-between, center, center);
+               & .switch-btns-container {
+                    // margin: 10px;
+                    width: 90%;
+                    display: flex;
+                    height: 50px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    background-color: rgb(255, 255, 255);
+                    border: 1px solid rgb(152, 152, 152);
+                    box-shadow: 0px 2px 7px -4px rgba(44, 44, 44, 0.73);
+                    transition: all 0.5s;
+                    & button {
+                         border-radius: 10px;
+                         width: 100%;
+                         border: none;
+                         background-color: rgb(255, 255, 255);
+                         transition: all 0.2s;
+                  
+                    }
+
+                    & .loginOn,
+                    .signUpOn {
+                         cursor: pointer;
+                         width: 100%;
+                         border: none;
+                         font-size: 20px;
+                         background-color: rgb(0, 0, 0);
+                         color: white;
+                         transition: all 0.5s;
+                    }
+               }
+          }
+     }
+}

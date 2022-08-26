@@ -1,0 +1,133 @@
+.profile{
+ position: relative;
+  margin: 0 auto;
+  height: 90vh;
+  width: 50vw;
+  font-size: 2.5em;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+
+      & button{
+            position: absolute;
+            width: 5rem;
+            height: 2rem;
+            border: none;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+       }
+       & .edit-btn{
+           cursor: pointer;
+            background: #3DDCA3;
+            color: #213041;
+            margin-top: -50px;
+            &:hover{
+                background: #213041;
+                color: #3DDCA3;
+            }
+            &:active{
+                transform:scale(0.9)
+            }
+       }
+       & .profile-form{
+             margin: 0 auto;
+             display: grid;
+
+               & input{
+                    margin: 5px;
+                    width: 30vw;
+                    height: 50px;
+                    border: none;
+                    border-radius: 10px;
+                    padding-left: 15px;
+                    box-shadow: 0px 2px 7px -4px rgba(44, 44, 44, 0.73);
+                    background: rgba(245, 248, 251, 0.635);
+
+                    &[type="text"]:disabled,[type="password"]:disabled, [type="select"]:disabled {
+                        background: rgba(159, 215, 255, 0.4);
+                    }
+                    &[type="password"]:disabled {
+                         background: rgba(159, 215, 255, 0.4);
+                     }
+              
+                 
+               }
+     
+               
+          & select{
+                    box-shadow: 0px 2px 7px -4px rgba(44, 44, 44, 0.73);
+                    background: rgba(245, 248, 251, 0.635);
+                    width: 20vw;
+                    height: 50px;
+                    border: none;
+                    border-radius: 10px;
+                    margin: 0 5px;
+                    &:disabled {
+                        background: rgba(159, 215, 255, 0.655);
+                    }
+               }
+          & .save-btn{
+                    background: #213041;
+                    color: #FFFFFF;
+                    margin: 50px 5px;
+
+                    &:hover{
+                        background: #3DDCA3;
+                        color: #213041;
+                    }
+                    &:active{
+                        transform:scale(0.9)
+                    }
+          }
+
+       }
+
+       & .logout-btn{
+            position: absolute;
+             background: #ff3d57;
+             color: #213041;
+             right:9vw;
+             margin: 50px 5px;
+
+             &:hover{
+                 background: #213041;
+                 color: #ffffff;
+             }
+                &:active{
+                      transform:scale(0.9)
+                }
+             
+       }
+       
+       & .error{
+            color: red;
+            font-size: large;
+            padding: 10px;
+       }
+     
+       & .successful{
+            color: #213041;
+            font-size: x-large;
+            align-items: center;
+       }
+}
+
+
+
+@media (max-width: 768px) {
+     .profile{
+           width: 80vw;
+                & .profile-form{
+                        & input{
+                             width: 70vw;
+                        }     
+                   & select{
+                       width: 40vw;
+                
+                        }
+                }
+     
+         }      
+     
+ }

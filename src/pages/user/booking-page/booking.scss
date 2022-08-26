@@ -1,0 +1,286 @@
+@import '../../../global-sass/core';
+
+
+.booking-page{
+
+    & *{
+        box-sizing: border-box;
+    }
+
+    padding: 1rem;
+    min-height: 100vh;
+    
+
+    // &_end-date-initial{
+    //     display: none;
+    // }
+
+    &_content-flex-container{
+        @include flex-variable(column, nowrap, flex-start, center, center);
+        margin: 1rem auto;
+        width: 50%;
+        gap: 1rem;
+
+        @media screen and (max-width:1060px) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 700px) {
+            width: 98%;
+        }
+    }
+
+    &_header{
+        background-color: $color-box-light;
+        padding: 1.5rem;
+        width: 100%;
+        @include flex-variable(row, nowrap, space-evenly, center, center);   
+        border-radius: 20px;    
+
+        @media screen and (max-width: 555px) {
+            @include flex-variable(column, nowrap, space-evenly, center, center);  
+            gap: 1rem;
+        }
+    }
+
+    & button{
+        all: initial;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0.5rem 1rem;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:nth-child(1){
+            border-radius: 1rem 0 0 1rem;
+            color: white;
+        }
+
+        &:nth-child(2){
+            border-radius: 0 1rem 1rem 0;
+        }
+    }
+
+    & input[type='date']{
+        border: none;
+        // border: 2px solid $color-dark-button;
+        padding: 0.5rem;
+        border-radius: 10px;
+       
+
+        &:focus-visible{
+           outline: 2px solid $color-dark-button;
+           box-shadow: 0 0 20px $color-button-green;
+        }
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+.fixDesk-flexDesk-container{
+    display: inline-block;
+    margin-right: 1rem;
+    border-radius: 2rem;
+    position: relative;
+    background-color: white;
+    @include box-shadow-default();
+
+    .black-background{
+        width: 50%;
+        min-height: 100%;
+        background-color: #213041;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 1rem;
+        z-index: 1;
+        box-shadow: inherit;
+        transition: left 0.3s;
+    }
+}
+
+.container-article{
+    width: 100%;
+    padding: 1rem;
+    background-color: $color-box-light;
+    border-radius: 20px;
+
+    & .free-desk{
+        background-color: $color-box-medium;
+        padding: 1rem;
+        border-radius: inherit;
+
+        & header{
+            // border: 1px solid black;
+            @include flex-variable(row, wrap, space-between, center, center);
+
+            & h3{
+                text-shadow: 0px 1px 1px rgba($color: #000000, $alpha: 0.2);
+                // color: $color-button-green;
+                background-color: #fff;
+                padding: 0.5rem;
+                padding-right: 3rem;
+                position: relative;
+                left: -1rem;
+                border-radius: 0 10px 10px 0;
+            }
+        }
+
+        & .user-controll_button{
+            background-color: $color-button-green;
+            border-radius: 10px;
+            @include box-shadow-default();
+
+            &:hover{
+                @include box-shadow-default-hover();
+            }
+        }
+
+        & .response-booking{
+            width: 100%;
+            // background-color: #fff;
+            // padding: 0.5rem;
+            // box-shadow: 1px 2px 3px rgba($color: #000000, $alpha: 0.2) inset;
+            border-radius: 20px;
+            text-align: right;
+            filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2));
+        }
+
+        & details{
+            margin: 0.5rem;
+            cursor: pointer;
+        
+
+
+            & summary{
+                // border: solid rgba($color: #000000, $alpha: 0.1);
+                border-width: 1px 0;
+                // background-color: #D7EEFF;
+                padding: 0.7rem;
+                // border-radius: 10px;
+            }   
+        }
+
+        & .more-informations{
+            background-color: #fff;
+            padding: 3rem 0.5rem;
+            border-radius: 10px;
+            @include box-shadow-default();
+
+            & input[type="checkbox"]{
+                display: none;
+               
+
+                &:checked + label{
+                    // outline: 1px solid $color-button-green;
+                    // outline-offset: 0.7rem;
+                    transform: scale(0.90);
+                    box-shadow: 0 0 5px $color-button-green;
+                    @media screen and (max-width: 520px) {
+                       width: 80%;
+                       margin: 0.5rem;
+                    }
+                }
+            }
+
+            & .user-controll{
+                @include flex-variable(row, nowrap, space-evenly, center, center);
+                // border-bottom: 1px solid $color-dark-button;
+                // padding-bottom: 1.5rem;
+                margin-bottom: 2.5rem;
+                @media screen and (max-width: 520px) {
+                    @include flex-variable(column, nowrap, space-evenly, center, center);
+                    min-height: 12rem;
+                }
+            }
+
+            & label{
+                padding: 0.7rem;
+                @include box-shadow-default();
+                background-color: $color-dark-button;
+                color: #fff;
+                border-radius: 10px;
+                width: 8rem;
+                text-align: center;
+                cursor: pointer;
+               
+                // transition: box-shadow 0.3s, transform 0.3s;
+
+                &:hover{
+                    // outline: 1px solid $color-button-green;
+                    // outline-offset: 0.7rem;
+                    box-shadow: 0 0 30px $color-button-green;
+                }
+            }
+
+            &_room-overview{
+                text-align: center;
+
+                & img{
+                    @media screen and (max-width: 520px) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &_equipment{
+                border: double $color-dark-button;
+                border-width: 5px 0;
+                width: 50%;
+                margin: 2rem auto;
+                // background-color: #D8EFFF;
+                padding: 1rem;
+
+                & ul{
+                    list-style: none;
+                    padding: 0;
+                    text-align: right;
+
+                    & li::before{
+                        content: '⇒ \2009 \2009 \2009 \2009 \2009';
+                    }
+                }
+            }
+
+            &_comments{
+
+                & .comment-card{
+                    // border: 1px solid black;
+                    // background-color: #D7EEFF;
+                    margin-bottom: 1rem;
+                    // padding: 0.5rem;
+                    width: 70%;
+                    margin: 1.5rem auto;
+                    // border: solid $color-dark-button;
+                    // border-width: 1px;
+                    @include box-shadow-default();
+                   
+
+                    &_meta-info{
+                        border-bottom: 1px solid rgba(0,0,0,0.2);
+                        padding: 0.5rem;
+                        @include box-shadow-default();
+                        background-color: #DEF3FE;
+                        // width: 70%;
+                        margin: 0 auto;
+                        // border: solid black;
+                        // border-width: 0 1px 1px;
+                        text-align: center;
+                    }
+
+                    & p:not(.comment-card_meta-info){
+                        padding: 0.5rem;
+                        // border: solid $color-dark-button;
+                        // border-width: 0 2px 1px;
+                    }
+                }
+                
+            }
+        }
+    }
+
+}
+

@@ -1,0 +1,149 @@
+@import '../../../global-sass/core';
+
+.favourite-page{
+    
+    & *{
+        box-sizing: border-box;
+    }
+
+    padding: 1rem;
+    min-height: 100vh;
+   
+
+    &_content-flex-container{
+        @include flex-variable(column, nowrap, flex-start, center, center);
+        margin: 1rem auto;
+        width: 50%;
+        gap: 1rem;
+        @media screen and (max-width:1060px) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 700px) {
+            width: 98%;
+        }
+    }
+
+    & button{
+        all: initial;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0.5rem 1rem;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:nth-child(1){
+            border-radius: 1rem 0 0 1rem;
+            color: white;
+        }
+
+        &:nth-child(2){
+            border-radius: 0 1rem 1rem 0;
+        }
+    }
+
+    & input[type='date']{
+        border: none;
+        // border: 2px solid $color-dark-button;
+        padding: 0.5rem;
+        border-radius: 10px;
+
+        &:focus-visible{
+           outline: 2px solid $color-dark-button;
+           box-shadow: 0 0 20px $color-button-green;
+        }
+    }
+
+    &_header{
+        background-color: $color-box-light;
+        padding: 1.5rem;
+        width: 100%;
+        @include flex-variable(row, nowrap, space-evenly, center, center);   
+        border-radius: 20px;   
+
+        @media screen and (max-width: 555px) {
+            @include flex-variable(column, nowrap, space-evenly, center, center);  
+            gap: 1rem;
+        } 
+    }
+
+}
+
+.fixDesk-flexDesk-container{
+    display: inline-block;
+    margin-right: 1rem;
+    border-radius: 2rem;
+    position: relative;
+    background-color: white;
+    @include box-shadow-default();
+
+    .black-background{
+        width: 50%;
+        min-height: 100%;
+        background-color: #213041;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 1rem;
+        z-index: 1;
+        box-shadow: inherit;
+        transition: left 0.3s;
+    }
+}
+
+.favourite-page_list{
+    list-style: none;
+    padding: 0;
+    width: 80%;
+
+    @media screen and (max-width:1060px) {
+        width: 100%;
+    }
+
+   
+    & li{
+        @include flex-variable(row, wrap, space-between,center, center);
+       background-color: $color-box-medium;
+       padding: 1rem 1rem 1rem 0;
+       margin-bottom: 2rem;
+       border-radius: 10px;
+    }
+
+    & img{
+        width: 1.5rem;
+        height: 1.8rem;
+    }
+
+    & .office-and-desk{
+        text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        font-weight: bold;
+        background-color: #fff;
+        padding: 0.5rem;
+        padding-right: 2rem;
+        border-radius: 0 10px 10px 0;
+        font-size: 110%;
+    }
+
+    & .booking-button-favourite{
+        background-color: $color-button-green;
+        border-radius: 10px !important;
+        @include box-shadow-default();
+
+        &:hover{
+            @include box-shadow-default-hover();
+        }
+    }
+
+    & .response-booking{
+        width: 100%;
+        // background-color: #fff;
+        // padding: 0.5rem;
+        // box-shadow: 1px 2px 3px rgba($color: #000000, $alpha: 0.2) inset;
+        border-radius: 20px;
+        text-align: right;
+        filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2));
+    }
+
+
+}

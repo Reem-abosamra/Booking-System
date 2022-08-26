@@ -1,0 +1,888 @@
+{
+	"info": {
+		"_postman_id": "d9b79ec1-1cc6-4d09-ab07-4a0318f3bf8b",
+		"name": "Challenge 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20888773"
+	},
+	"item": [
+		{
+			"name": "/user",
+			"item": [
+				{
+					"name": "user - list of all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/user",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user - profil update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/user",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user - get a specific user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/user/5fa2af64-d53d-44f4-b525-e3f36c7f81f8",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"user",
+								"5fa2af64-d53d-44f4-b525-e3f36c7f81f8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/office",
+			"item": [
+				{
+					"name": "office - get a list of all offices",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/office",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"office"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "office - get a specific office",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/office/148c565f-c024-4b6a-95fe-a2d8138e22b5",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"office",
+								"148c565f-c024-4b6a-95fe-a2d8138e22b5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/desk",
+			"item": [
+				{
+					"name": "desk - a list of all desks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/desk",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"desk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "desk - specific desk",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/desk/c1cb8688-7365-4550-8378-fe45a1b4067b",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"desk",
+								"c1cb8688-7365-4550-8378-fe45a1b4067b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "desk -  get a list of comments for the given desk",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/desk/c1cb8688-7365-4550-8378-fe45a1b4067b/comment",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"desk",
+								"c1cb8688-7365-4550-8378-fe45a1b4067b",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "desk - post a comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"comment\": \"not all keyboard keys work\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/desk/c1cb8688-7365-4550-8378-fe45a1b4067b/comment",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"desk",
+								"c1cb8688-7365-4550-8378-fe45a1b4067b",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "desk - get a specific comment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/desk/c1cb8688-7365-4550-8378-fe45a1b4067b/comment/1a2fc4f1-4591-4e61-91a9-6f4d71039cea",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"desk",
+								"c1cb8688-7365-4550-8378-fe45a1b4067b",
+								"comment",
+								"1a2fc4f1-4591-4e61-91a9-6f4d71039cea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "desk - request for a fix desk",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"comment\": \"I want to declare this desk as my fix desk.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/desk/c4432db8-bcd3-4b48-8002-b0b2c43c7058/fix",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"desk",
+								"c4432db8-bcd3-4b48-8002-b0b2c43c7058",
+								"fix"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "desk - get the status of a fix desk approval",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/desk/c4432db8-bcd3-4b48-8002-b0b2c43c7058/fix",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"desk",
+								"c4432db8-bcd3-4b48-8002-b0b2c43c7058",
+								"fix"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "desk - delete fix desk request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/desk/c4432db8-bcd3-4b48-8002-b0b2c43c7058/fix",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"desk",
+								"c4432db8-bcd3-4b48-8002-b0b2c43c7058",
+								"fix"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/favourite",
+			"item": [
+				{
+					"name": "favourite - mark a desk as favourite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deskId\": \"1eda365f-c033-4e10-8d89-0ec8f76faf32\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/favourite",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"favourite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "favourite - get all favourites of a user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/favourite",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"favourite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "favourite - delete a desk from the favourite list",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deskId\": \"1eda365f-c033-4e10-8d89-0ec8f76faf32\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/favourite",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"favourite"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{pureToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "/booking",
+			"item": [
+				{
+					"name": "booking - book a flex desk",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deskId\": \"824c72b5-76a9-43e2-a18e-7b5a53552b14\",\r\n  \"dateStart\": \"2022-10-09\",\r\n  \"dateEnd\": \"2022-10-09\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/booking",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booking - get a list of all  bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/booking",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booking - all booking of a desk",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/booking?deskId=824c72b5-76a9-43e2-a18e-7b5a53552b14",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "deskId",
+									"value": "824c72b5-76a9-43e2-a18e-7b5a53552b14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booking - all bookings of a user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/booking?userId=f4f56714-9bb3-478c-ad89-c2063ebcdad7",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "f4f56714-9bb3-478c-ad89-c2063ebcdad7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booking - details of a booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/booking/edaf1a77-be9e-4400-8665-74260d687f54",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"booking",
+								"edaf1a77-be9e-4400-8665-74260d687f54"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booking - cancel a booking",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/booking/47d94733-b820-4092-9d10-b06026e8f284",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"booking",
+								"47d94733-b820-4092-9d10-b06026e8f284"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{pureToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "/admin",
+			"item": [
+				{
+					"name": "admin - all fix desk requests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/admin/fix-desk-request",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admin",
+								"fix-desk-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin - get a specific fix desk request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/admin/fix-desk-request/cd7aeaa2-a5b4-405a-b7f4-7c1577b2f94e",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admin",
+								"fix-desk-request",
+								"cd7aeaa2-a5b4-405a-b7f4-7c1577b2f94e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addmin - approve a fix desk request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/admin/fix-desk-request/cd7aeaa2-a5b4-405a-b7f4-7c1577b2f94e/approve",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admin",
+								"fix-desk-request",
+								"cd7aeaa2-a5b4-405a-b7f4-7c1577b2f94e",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin - decline a fix desk booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/admin/fix-desk-request/39ac67c7-cd90-4ae3-9b45-dc8ffd37a3b8/decline",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admin",
+								"fix-desk-request",
+								"39ac67c7-cd90-4ae3-9b45-dc8ffd37a3b8",
+								"decline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin - a list of all comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/admin/comments",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admin",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin - make a user to an admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/admin/user/b552759f-9d16-4609-acb2-f492b4d954b7/admin?secret=supersecret123",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"b552759f-9d16-4609-acb2-f492b4d954b7",
+								"admin"
+							],
+							"query": [
+								{
+									"key": "secret",
+									"value": "supersecret123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{pureToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin.web1@example.org\",\r\n  \"password\": \"supersecurepassword1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/login",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"patricio-schranz@example.org\",\r\n  \"firstname\": \"Patricio\",\r\n  \"lastname\": \"Schranz\",\r\n  \"department\": \"Web\",\r\n  \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/register",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseUrl",
+			"value": "https://deskbooking.dev.webundsoehne.com/api/",
+			"type": "string"
+		},
+		{
+			"key": "Token",
+			"value": "Bearer 578674653ca54819a954c596b03fa841ec1fd1356c8849679be64978d18145fa",
+			"type": "string"
+		},
+		{
+			"key": "pureToken",
+			"value": "578674653ca54819a954c596b03fa841ec1fd1356c8849679be64978d18145fa",
+			"type": "string"
+		}
+	]
+}

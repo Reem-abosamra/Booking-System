@@ -1,0 +1,131 @@
+@import "../../global-sass/core";
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(180deg, #63BDFF 0%, rgba(131, 234, 241, 0.7) 100%);
+}
+
+.user-navigation {
+    // @include testing-border;
+    @include flex-variable(row, wrap, space-between, center, center);
+    padding: 1rem;
+    margin: 0;
+    background-color: $color-main-blue;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 3px groove rgba($color: #fff, $alpha: 0.5);
+    box-shadow: 
+        2px 3px 10px rgba($color: #000000, $alpha: 0.2) ,
+        -2px -3px 10px rgba($color: #000000, $alpha: 0.2) ;
+    transition: box-shadow 0.3s;
+
+    &:hover{
+        box-shadow: none;
+    }
+
+    & select{
+        border-radius: 5px;
+    }
+
+    & img {
+        width: 5rem;
+
+    }
+
+    & .profile-img {
+        width: 3rem;
+    }
+
+    & .hamburger_nav_close{
+        display:none;
+    }
+    & .hamburger_nav_open{
+        display:none;
+    }
+    & .hamburgerBtnOpen{
+        display:none;
+    }
+    
+    & .hamburgerBtn{
+        display: none;
+    }
+    &_link-list {
+        // @include testing-border();
+        @include flex-variable(row, nowrap, space-evenly, center, center);
+        width: 70%;
+        list-style: none;
+        padding: 0;
+
+
+    }
+}
+
+.admin-navigation {
+    padding: 0.5rem;
+    border: 1px solid #fff;
+    font-family: "Arial";
+
+    // & option{
+    //     background-color: aliceblue;  
+
+    // }
+}
+
+
+@media screen and (max-width: 900px) {
+    .user-navigation {
+
+        & .hamburger_nav_open{      // @include testing-border();
+            @include flex-variable(column, nowrap, space-evenly, center, center);
+            background-color: rgba(111, 209, 251, 0.982);
+            box-shadow: 
+            2px 3px 10px rgba($color: #000000, $alpha: 0.2) ,
+            -2px -3px 10px rgba($color: #000000, $alpha: 0.2) ;
+            border-radius: 15px;
+            width: 80%;
+            height: 90%;
+            z-index: 11;
+            list-style: none;
+            padding: 0;
+            position: absolute;
+            top: 0 ;
+            right: 5px;
+            bottom: 0;
+
+        }
+        & .hamburgerBtn{
+            cursor: pointer;
+            z-index: 1111;
+            width: 50px;
+            height: 40px;
+            display: block;
+            transition: transform 0.2s;
+
+            &:hover{
+                cursor: pointer;
+       
+            }
+            &:active{
+                transform:scale(0.9);
+            }
+        }
+
+        & .hamburgerBtnOpen{
+            display: block;
+            z-index: 1111;
+            width: 35px;
+            height: 35px;
+            margin-right: 5px;
+            cursor: pointer;
+            &:active{
+                transform:scale(0.9);
+            }
+        }
+        & ul {
+
+            display: none;
+
+
+        }
+    }
+}
+   
